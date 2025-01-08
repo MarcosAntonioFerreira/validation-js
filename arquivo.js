@@ -8,13 +8,13 @@ function carregarFormulario() {
             console.error('Erro ao carregar o formulário:', error);
         });
 }
-window.mascaraTelefone = function (input) {
+mascaraTelefone = function (input) {
     input.value = input.value
         .replace(/\D/g, "")
         .replace(/^(\d{2})(\d{2})(\d{5})(\d{4}).*/, "+$1 $2 $3-$4")
         .slice(0, 17);
 };
-window.validarTelefone = function (input) {
+validarTelefone = function (input) {
     const telefoneRegex = /^\+55\s\d{2}\s\d{5}-\d{4}$/;
     const erroElemento = document.getElementById("erro-telefone");
     if (!telefoneRegex.test(input.value)) {
